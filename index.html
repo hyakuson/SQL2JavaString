@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SQLをJavaの文字列結合にする</title>
+</head>
+
+<body>
+    <h1>SQLをJavaの文字列結合にするやーつ(バグってる)</h1>
+    <div>
+    <textarea id="sql" cols="50" rows="10"></textarea>
+    </div>
+    <div>
+    前につける
+    <input type="text" id="mae" value='sb.append(" '>
+    </div>
+    <div>
+    後につける
+    <input type="text" id="ato" value=' ");'>
+    </div>
+    <div>
+    <button id="replaceButton">置換</button>
+    </div>
+    <div>
+    <textarea id="replaced" cols="50" rows="10"></textarea>
+    </div>
+    
+    <script>
+        document.getElementById('replaceButton').addEventListener('click', function() {
+            var str = document.getElementById('sql').value + '\r\n';
+            var mae = document.getElementById('mae').value;
+            str = str.replace(/^./mg, mae + '$&');
+            var ato = document.getElementById('ato').value;
+            str = str.replace(/\r?\n/mg, (ato + '\r\n'));
+            
+            document.getElementById('replaced').value = "StringBuffer sb = new StringBuffer(256);\n\r" + str;
+        });
+    </script>
+</body>
+
+</html>
