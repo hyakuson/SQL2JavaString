@@ -26,23 +26,7 @@
     <textarea id="replaced" cols="50" rows="10"></textarea>
     </div>
     <a href="https://github.com/hyakuson/SQL2JavaString">View on Github</a>
-    <script>
-        document.getElementById('replaceButton').addEventListener('click', function() {
-            var mae = document.getElementById('mae').value,
-                ato = document.getElementById('ato').value,
-                str =  document.getElementById('sql').value,
-                textArray = str.split(/\r\n|\r|\n/),
-                replaced = [];
-
-            textArray.forEach(function (text, index) {
-                if (text.length > 0) {
-                    replaced[index] = 'sb.append(" ' + text + ' ");';
-                }
-            });
-
-            document.getElementById('replaced').value = replaced.join("\r\n");
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
