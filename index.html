@@ -7,26 +7,17 @@
 </head>
 
 <body>
-    <h1>SQLをJavaの文字列結合にするやーつ</h1>
-    <div>
-    <textarea id="sql" cols="50" rows="10"></textarea>
-    </div>
-    <div>
-    前につける
-    <input type="text" id="mae" value='sb.append(" '>
-    </div>
-    <div>
-    後につける
-    <input type="text" id="ato" value=' ");'>
-    </div>
-    <div>
-    <button id="replaceButton">置換</button>
-    </div>
-    <div>
-    <textarea id="replaced" cols="50" rows="10"></textarea>
-    </div>
-    <a href="https://github.com/hyakuson/SQL2JavaString">View on Github</a>
-    <script src="index.js"></script>
+    <app></app>
+    <script src="https://cdn.jsdelivr.net/riot/2.6/riot+compiler.min.js"></script>
+    <script src="app.tag" type="riot/tag"></script>
+    <script>
+        riot.mount("app", {
+            title: 'SQLをJavaの文字列結合にするやーつ',
+            origin: {
+                id: "sql"
+            }
+        });
+    </script>
 </body>
 
 </html>
