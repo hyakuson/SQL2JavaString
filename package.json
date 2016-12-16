@@ -8,12 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://hyakuson:ryouhei103@github.com/hyakuson/SQL2JavaString.git"
+    "url": "git://github.com/hyakuson/SQL2JavaString.git"
   },
   "author": "hyakuson",
   "license": "The Unlicense",
   "bugs": {
     "url": "https://github.com/hyakuson/SQL2JavaString/issues"
   },
-  "homepage": "https://github.com/hyakuson/SQL2JavaString#readme"
+  "homepage": "https://github.com/hyakuson/SQL2JavaString#readme",
+  "dependencies": {
+    "riot": "^3.0.4"
+  }
 }
