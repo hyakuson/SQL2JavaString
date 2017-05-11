@@ -22,8 +22,8 @@
     </div>
     <a href="https://github.com/hyakuson/SQL2JavaString">View on Github</a>
     <script>
-        this.mae.value = 'sb.append(" ';
-        this.ato.value = ' ");'
+        this.mae.value = document.getElementById('mae').value;
+        this.ato.value = document.getElementById('ato').value;
 
         replace () {
             var mae = this.mae.value,
