@@ -26,15 +26,15 @@
         this.ato.value = ' ");';
 
         replace () {
-            var mae = this.mae.value,
-                ato = this.ato.value,
+            var mae = document.getElementById("mae").value.toString(),
+                ato = document.getElementById("ato").value.toString(),
                 str = this.sql.value,
                 textArray = str.split(/\r\n|\r|\n/),
                 replaced = [];
 
             textArray.forEach(function (text, index) {
                 if (text.length > 0) {
-                    replaced[index] = mae.toString() + text + ato.toString();
+                    replaced[index] = mae + text + ato;
                 }
             });
 
