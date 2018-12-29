@@ -1,32 +1,34 @@
 <app>
-    <h1>{ opts.title }</h1>
+    <h1>{ title }</h1>
     <div>
-        <textarea ref="sql" cols="50" rows="10"></textarea>
+        <input-textarea refid="sql"></input-textarea>
     </div>
     <div>
-        前につける
-        <input type="text" ref="mae" value='{mae}'>
+        
+        <label-text text="前につける"></label-text>
+        <input-text refid="mae" val="{ mae }"></input-text>
     </div>
     <div>
-        後につける
-        <input type="text" ref="ato" value='{ato}'>
+        <label-text text="後につける"></label-text>
+        <input-text refid="ato" val="{ ato }"></input-text>
     </div>
     <div>
         <button onclick={ replace }>置換</button>
     </div>
         <div>
-        <textarea ref="replaced" cols="50" rows="10"></textarea>
+        <input-textarea refid="replaced"></input-textarea>
     </div>
     <a href="https://github.com/hyakuson/SQL2JavaString">View on Github</a>
     <script>
+        this.title = "SQLをJavaのStringにするやーつ";
         this.mae = 'sb.append(" ';
         this.ato = ' ");';
         this.sql = "";
 
         replace () {
-            var mae = this.refs.mae.value || "",
-                ato = this.refs.ato.value || "",
-                str = this.refs.sql.value || "",
+            var mae = document.getElementById("mae").value || "",
+                ato = document.getElementById("ato").value || "",
+                str = document.getElementById("sql").value || "",
                 textArray = str.split(/\r\n|\r|\n/),
                 replaced = [];
 
@@ -36,7 +38,7 @@
                 }
             });
 
-            this.refs.replaced.value = replaced.join("\r\n");
+            document.getElementById("replaced").value = replaced.join("\r\n");
         };
     </script>
 </app>

@@ -9,14 +9,12 @@
 <body>
     <app></app>
     <script src="./lib/riot+compiler.min.js"></script>
+    <script src="./tags/atoms/input-text.tag" type="riot/tag"></script>
+    <script src="./tags/atoms/label-text.tag" type="riot/tag"></script>
+    <script src="./tags/atoms/input-textarea.tag" type="riot/tag"></script>
     <script src="app.tag" type="riot/tag"></script>
     <script>
-        riot.mount("app", {
-            title: 'SQLをJavaの文字列結合にするやーつ',
-            origin: {
-                id: "sql"
-            }
-        });
+        riot.mount("*");
     </script>
 </body>
 
